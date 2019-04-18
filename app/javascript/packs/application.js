@@ -7,3 +7,18 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+
+import "controllers"
+
+import flatpickr from "flatpickr";
+// 只需要CSS
+// 使用不同的主题：
+require("flatpickr/dist/themes/light.css")
+
+document.addEventListener("turbolinks:load", () => {
+  flatpickr("[data-behavior='flatpickr']", {
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d"
+  })
+})
